@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Android Chart</string>
+    <string name="pie_chart">Pie Chart</string>
+</resources>
