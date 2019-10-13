@@ -85,7 +85,8 @@ public class ContohPieChartActivity extends AppCompatActivity {
         //TODO 7 BUAT ARRAYLIST DATA YANG NANTI DIISI SAMA DATA YANG MAU DITAMPILIN DI PIE CHART
         ArrayList<PieEntry> entries = new ArrayList<>();
 
-        //TODO 8 NAMBAHIN DATA KE ARRAYLIST YANG NANTINYA DI TAMPILIN, caranya >> entries.add(new PieEntry(Isi dengan value dengan tipe data float, "Isi dengan Nama Label"));
+        //TODO 8 NAMBAHIN DATA KE ARRAYLIST YANG NANTINYA DI TAMPILIN, caranya >>
+        // entries.add(new PieEntry(Isi dengan value dengan tipe data float, "Isi dengan Nama Label"));
         entries.add(new PieEntry(1500f, "Label Satu"));
         entries.add(new PieEntry(2000f, "Label Dua"));
         entries.add(new PieEntry(1000f, "Label Tiga"));
