@@ -26,15 +26,23 @@ public class ContohPieChartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contoh_pie_chart);
 
+        //TODO 1 CAST VIEW CHART
         pieChart = findViewById(R.id.chart_pie);
+
+
+        //TODO 2 PENGATURAN PIE CHART
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5, 10, 5, 5);
 
         pieChart.setDragDecelerationFrictionCoef(0.95f);
 
+
+        //TODO 3 ATUR JUDUL PIE CHART YANG NANTI DI TAMPILKAN DITENGAH CHART
         pieChart.setCenterText("Judul\nPie Chart");
 
+
+        //TODO 4 PENGATURAN PIE CHART LANJOOOOOT
         pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(Color.WHITE);
 
@@ -53,6 +61,7 @@ public class ContohPieChartActivity extends AppCompatActivity {
         pieChart.animateY(1400, Easing.EaseInOutQuad);
 
 
+        //TODO 5 PENGATURAN LEGEND PIE CHART, NGATUR POSISI DAN TAMPILAN LEGEND NYA
         Legend legend = pieChart.getLegend();
         legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
@@ -65,26 +74,37 @@ public class ContohPieChartActivity extends AppCompatActivity {
         pieChart.setEntryLabelColor(Color.WHITE);
         pieChart.setEntryLabelTextSize(12f);
 
+
+        // TODO 6 MANGGIL FUNSI SET DATA BIAR DATANYA DI TAMPILIN DI PIE CHART
         setData();
     }
 
     private void setData() {
 
+
+        //TODO 7 BUAT ARRAYLIST DATA YANG NANTI DIISI SAMA DATA YANG MAU DITAMPILIN DI PIE CHART
         ArrayList<PieEntry> entries = new ArrayList<>();
 
+        //TODO 8 NAMBAHIN DATA KE ARRAYLIST YANG NANTINYA DI TAMPILIN, 25f ITU PERSENAN NYA(VALUE), kalo sebelahnya LABEL nya
         entries.add(new PieEntry(25f, "Label Satu"));
         entries.add(new PieEntry(25f, "Label Dua"));
         entries.add(new PieEntry(25f, "Label Tiga"));
         entries.add(new PieEntry(25f, "Label Empat"));
 
+
+        // TODO 9 MASUKIN DATA ARRAYLIST TADI KE PIE CHART
         PieDataSet dataSet = new PieDataSet(entries, "Label Result");
 
+
+        // TODO 10 PENGATURAN LANJOOOOT
         dataSet.setDrawIcons(false);
 
         dataSet.setSliceSpace(3f);
         dataSet.setIconsOffset(new MPPointF(0, 40));
         dataSet.setSelectionShift(5f);
 
+
+        // TODO 11 PENGATURAN WARNA DALEMAN PIE CHART
         ArrayList<Integer> colors = new ArrayList<>();
 
         for (int c : ColorTemplate.VORDIPLOM_COLORS)
@@ -106,6 +126,8 @@ public class ContohPieChartActivity extends AppCompatActivity {
 
         dataSet.setColors(colors);
 
+
+        // TODO 12 PENGATURAN LANJOOT LAGIII
         PieData data = new PieData(dataSet);
         data.setValueFormatter(new PercentFormatter(pieChart));
         data.setValueTextSize(11f);
