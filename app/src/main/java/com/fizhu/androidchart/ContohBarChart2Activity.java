@@ -26,8 +26,10 @@ public class ContohBarChart2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contoh_bar_chart2);
 
+        //TODO 1 CAST VIEW BAR CHART NYA
         horizontalBarChart = findViewById(R.id.chart_bar2);
 
+        //TODO 2 IKUTIN AJA SETTINGAN INI KALO GAMAU RIBET WKWKWKW
         horizontalBarChart.setDrawGridBackground(false);
         horizontalBarChart.getDescription().setEnabled(false);
 
@@ -57,6 +59,9 @@ public class ContohBarChart2Activity extends AppCompatActivity {
         xAxis.setCenterAxisLabels(true);
         xAxis.setLabelCount(12);
         xAxis.setGranularity(10f);
+
+        //TODO 3 INI FORMATTER BUAT ANGKA DESIMAL YANG MAU DI TAMPILIN, LIAT FUNGSI DIBAWAH
+        // DI FUNGSI FORMATTER BUAT NAMBAHIN SATUAN m DI AKHIR VALUE
         xAxis.setValueFormatter(new ValueFormatter() {
 
             private final DecimalFormat format = new DecimalFormat("###");
@@ -67,6 +72,8 @@ public class ContohBarChart2Activity extends AppCompatActivity {
             }
         });
 
+
+        //TODO 4 SETTING LEGEND BUAT CHART NYA (POSISI DAN TAMPILAN LEGEND NYA)
         Legend l = horizontalBarChart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
         l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
@@ -76,6 +83,10 @@ public class ContohBarChart2Activity extends AppCompatActivity {
         l.setFormToTextSpace(4f);
         l.setXEntrySpace(6f);
 
+
+        //TODO 5 NAMBAHIN DATA KEDALAM CHART NYA
+        // ANGKA DIISI DARI KIRI, ANGKA YANG PERTAMA ITU BUAT YANG KANAN DAN KIRI,
+        // ANGKA YANG SELANJUTNYA YANG new float itu HARUS PLUS SAMA MINUS BIAR JADI KANAN KIRI, UNTUK VALUENYA TERSERAH BERAPA AJA ASAL PLUS MINUS
         // IMPORTANT: When using negative values in stacked bars, always make sure the negative values are in the array first
         ArrayList<BarEntry> values = new ArrayList<>();
         values.add(new BarEntry(5, new float[]{ -10, 10 }));
@@ -91,12 +102,18 @@ public class ContohBarChart2Activity extends AppCompatActivity {
         values.add(new BarEntry(95, new float[]{ -5, 6 }));
         values.add(new BarEntry(105, new float[]{ -1, 2 }));
 
+
+        //TODO 6 ATUR JUDUL LEGEND NYA
         BarDataSet set = new BarDataSet(values, "Judul Data nya");
         set.setDrawIcons(false);
         set.setValueFormatter(new CustomFormatter());
         set.setValueTextSize(7f);
         set.setAxisDependency(YAxis.AxisDependency.RIGHT);
-        set.setColors(Color.rgb(67,67,72), Color.rgb(124,181,236));
+
+        //TODO 7 PENGATURAN WARNA INDIKATOR LEGEND
+
+
+        //TODO 8 PENGATURAN LABEL LEGEND NYA
         set.setStackLabels(new String[]{
                 "Label Satu", "Label Dua"
         });
@@ -107,6 +124,8 @@ public class ContohBarChart2Activity extends AppCompatActivity {
         horizontalBarChart.invalidate();
     }
 
+
+    //TODO 9 INI FORMATTER NYA, KALO MAU UBAH SATUAN NYA
     private class CustomFormatter extends ValueFormatter {
 
         private final DecimalFormat mFormat;
