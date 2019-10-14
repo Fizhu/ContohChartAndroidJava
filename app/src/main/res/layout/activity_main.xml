@@ -15,4 +15,9 @@
         android:text="@string/pie_chart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/bt_bar2"
+        android:text="@string/bar_chart_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

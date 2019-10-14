@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Android Chart</string>
     <string name="pie_chart">Pie Chart</string>
+    <string name="bar_chart_2">Bar Chart 2</string>
 </resources>
